@@ -1,0 +1,12 @@
+.estadisticas, .mejorFrase, .frases {
+  font-family: "Verdana";
+}
+
+.mejorFrase {
+  font-size: 48;
+  font-weight: bold;
+}
+
+.estadisticas {
+  font-size: 24;
+}
