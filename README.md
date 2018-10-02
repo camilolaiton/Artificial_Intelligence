@@ -8,7 +8,7 @@ Here are some programs made with p5.js related to artificial intelligence. Some 
 3. [Ending](#ImportantStuff)
 
 ## MazeGenerator
-  This algorithm makes a new maze each time it is run. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
+  This algorithm makes a new maze each time it runs. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
   
 ## GeneticAlgorithm
   This algorithm tries to get a string by evolving an initial population. I'll upload more examples about this topic overtime.
