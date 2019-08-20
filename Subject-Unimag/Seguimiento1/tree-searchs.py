@@ -102,7 +102,7 @@ class tree_searchs():
         print("+ [INFO] Resultado ANCHURA: ", self.__visitados, "\n")
     
     def profundidad(self, start, end=None):
-        'This method makes a deep search in the graph'
+        'This method makes a depth search in the graph'
 
         print("+ [INFO] Busqueda en profundidad -> COMIENZO")
 
@@ -156,6 +156,8 @@ class tree_searchs():
         'This method makes a breadth search with uniform cost in the graph'
         #REVISAR CON LA PROFESORA
         
+        path = []
+
         print("+ [INFO] Busqueda de costo uniforme -> COMIENZO")
 
         if end in self.__grafo:
@@ -179,7 +181,7 @@ class tree_searchs():
             #print("Visitados: ", self.__visitados)
 
             actual = self.__cola.get()  #Sacamos el de menor costo
-            #print("+ [INFO] Saco de la cola: ", actual)
+            print("+ [INFO] Saco de la cola: ", actual)
 
             if actual[1] not in self.__visitados:
                 self.__visitados.extend(actual[1])
@@ -201,9 +203,8 @@ class tree_searchs():
         print("+ [INFO] Busqueda de costo uniforme -> TERMINADO")
         print("+ [INFO] Resultado COSTO UNIFORME: ", self.__visitados, "\n")
 
-    def __profundidad_iterativo(self):
-        pass
-    
+        def profundidad_iterativa(self):
+            pass
 
 graph1 = {
     "a":[("b", 1), ("c", 1), ("d", 1)], # Origen : destinos = (destino, peso_arista)
@@ -218,6 +219,8 @@ graph1 = {
     "k":[("j", 1), ("h", 1)],
 }
 
+#https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Flizardorodriguez.files.wordpress.com%2F2012%2F06%2Fg-recorrido-4.png&f=1
+
 graph2 = {
     # Origen : destinos = (destino, peso_arista)
     "D":[("B", 1), ("C", 1)],
@@ -229,6 +232,9 @@ graph2 = {
     "T":[],
 }
 
+#https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.slidesharecdn.com%2Frecorridodegrafos1raparte-140625160952-phpapp02%2F95%2Frecorrido-de-grafos-1ra-parte-5-638.jpg%3Fcb%3D1403712626&f=1
+#https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.slidesharecdn.com%2Frecorridos-140625015636-phpapp02%2F95%2Frecorridos-3-638.jpg%3Fcb%3D1403661419&f=1
+
 graph3 = {
     # Origen : destinos = (destino, peso_arista)
     "S":[("A", 1), ("B", 5), ("C", 15)],
@@ -237,6 +243,8 @@ graph3 = {
     "C":[("S", 15), ("G", 5)],
     "B":[("G", 5), ("S", 5)],
 }
+
+#https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fslideplayer.es%2F92355%2F1%2Fimages%2F33%2FB%25C3%25BAsqueda%2Bde%2Bcosto%2Buniforme.jpg&f=1
 
 graph4 = {
     # Origen : destinos = (destino, peso_arista)
@@ -247,6 +255,8 @@ graph4 = {
     "B":[("D", 3)],
     "D":[("G", 3)],
 }
+
+#https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fadvanceintelligence.files.wordpress.com%2F2015%2F02%2Fdat.png&f=1
 
 tree1 = tree_searchs("Arbol 1", graph2)
 tree1.profundidad("D", "Z")
