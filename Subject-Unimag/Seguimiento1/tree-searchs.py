@@ -69,56 +69,6 @@ class tree_searchs():
                 else:
                     stack.append((next, path + [next]))
 
-    def anchura_costo_uniforme(self, grafo, start, end=None):
-        'This method makes a breadth search with uniform cost in the graph'
-        #REVISAR CON LA PROFESORA
-        
-        path = []
-
-        print("+ [INFO] Busqueda de costo uniforme -> COMIENZO")
-
-        if end in grafo:
-            print("+ [INFO] Buscando objetivo ", end)
-        elif end:
-            print("+ [INFO] Objetivo no se encuentra en el grafo")
-
-        if start not in grafo:
-            print("No existe ese nodo en el grafo!")
-            return
-        
-        visitados = []
-        cola = queue.PriorityQueue(len(grafo))    #Creo cola de prioridad
-
-        #print("Ingreso origen a cola: ", start)
-        cola.put((0, start))
-
-        while cola.qsize() != 0:    #podria tambien while self.__cola ó !self.__cola.Empty()
-            
-            #print("Cola: ", self.__cola.qsize())
-            #print("Visitados: ", self.__visitados)
-
-            actual = cola.get()  #Sacamos el de menor costo
-            print("+ [INFO] Saco de la cola: ", actual)
-
-            if actual[1] not in visitados:
-                visitados.extend(actual[1])
-                print("+ [INFO] Añado nodo a visitados: ", actual[1])
-
-            if actual[1] == end:
-                print("+ [INFO] Objetivo encontrado")
-                break
-            
-            try:
-                for key, value in grafo[actual[1]]:
-                    if key not in visitados:
-                        #print("+ [INFO] Añado nodo a cola: ", key)
-                        cola.put((value, key)) #Introducimos con la cola organizada descendentemente
-            
-            except KeyError:
-                print("+ [WARNING] Nodo ", actual[1], " no tiene nodos adyacentes")
-
-        print("+ [INFO] Busqueda de costo uniforme -> TERMINADO")
-        print("+ [INFO] Resultado COSTO UNIFORME: ", visitados, "\n")
 
 grafo_jarra = {
 
@@ -164,7 +114,6 @@ tree1 = tree_searchs("Arbol 1")
 
 print next(tree1.dfs_paths(grafo_jarra, '(0,0)', '(2,0)')) 
 print next(tree1.bfs_paths(grafo_jarra, '(0,0)', '(2,0)'))
-tree1.anchura_costo_uniforme(graph3, "S", "B")
 
 """
 
@@ -259,57 +208,5 @@ grafo_jarra = {
     '(2,0)': [('(2,3)', 1), ('(4,0)', 1), ('(0,0)', 1), ('(0,2)', 1)],
     '(2,3)': [('(4,3)', 1), ('(0,3)', 1), ('(2,0)', 1), ('(4,1)', 1)],
 }
-
-def anchura_costo_uniforme(self, start, end=None):
-        'This method makes a breadth search with uniform cost in the graph'
-        #REVISAR CON LA PROFESORA
-        
-        path = []
-
-        print("+ [INFO] Busqueda de costo uniforme -> COMIENZO")
-
-        if end in self.__grafo:
-            print("+ [INFO] Buscando objetivo ", end)
-        elif end:
-            print("+ [INFO] Objetivo no se encuentra en el grafo")
-
-        if start not in self.__grafo:
-            print("No existe ese nodo en el grafo!")
-            return
-        
-        self.__visitados = []
-        self.__cola = queue.PriorityQueue(len(self.__grafo))    #Creo cola de prioridad
-
-        #print("Ingreso origen a cola: ", start)
-        self.__cola.put((0, start))
-
-        while self.__cola.qsize() != 0:    #podria tambien while self.__cola ó !self.__cola.Empty()
-            
-            #print("Cola: ", self.__cola.qsize())
-            #print("Visitados: ", self.__visitados)
-
-            actual = self.__cola.get()  #Sacamos el de menor costo
-            print("+ [INFO] Saco de la cola: ", actual)
-
-            if actual[1] not in self.__visitados:
-                self.__visitados.extend(actual[1])
-                print("+ [INFO] Añado nodo a visitados: ", actual[1])
-
-            if actual[1] == end:
-                print("+ [INFO] Objetivo encontrado")
-                break
-            
-            try:
-                for key, value in self.__grafo[actual[1]]:
-                    if key not in self.__visitados:
-                        #print("+ [INFO] Añado nodo a cola: ", key)
-                        self.__cola.put((value, key)) #Introducimos con la cola organizada descendentemente
-            
-            except KeyError:
-                print("+ [WARNING] Nodo ", actual[1], " no tiene nodos adyacentes")
-
-        print("+ [INFO] Busqueda de costo uniforme -> TERMINADO")
-        print("+ [INFO] Resultado COSTO UNIFORME: ", self.__visitados, "\n")
-
 
 """
