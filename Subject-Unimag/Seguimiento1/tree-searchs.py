@@ -46,11 +46,15 @@ class tree_searchs():
     def bfs_paths(self, graph, start, goal):
         queue = [(start, [start])]
         while queue:
+            #print "Cola antes: ", queue, "\n"
             (vertex, path) = queue.pop(0)
-            print path
+            #print "Cola despues: ", queue, "\n"
+
+            print(path)
+            
             l = list(set(graph[vertex]) - set(path))
             for next in sorted(l):
-                print graph[vertex]
+                print(graph[vertex])
                 if next == goal:
                     yield path + [next]
                 else:
@@ -60,7 +64,7 @@ class tree_searchs():
         stack = [(start, [start])]
         while stack:
             (vertex, path) = stack.pop()
-            print 'path: ' , path
+            print('path: ' , path)
             l = list(set(graph[vertex]) - set(path))
             for next in sorted(l, reverse=True):
                             
@@ -69,6 +73,108 @@ class tree_searchs():
                 else:
                     stack.append((next, path + [next]))
 
+    def implementacion_costo_uniforme(self, origen, destino):
+        graph = self.__readGraph()
+        self.logica_costo_uniforme(graph, origen, destino)
+
+    def logica_costo_uniforme(self, graph, start, end):
+
+        if start not in graph:
+            raise TypeError(str(start) + ' not found in graph !')
+            return
+
+        if end not in graph:
+            raise TypeError(str(end) + ' not found in graph !')
+            return
+        
+        queue_a = queue.PriorityQueue()
+        queue_a.put((0, [start]))
+        
+        while not queue_a.empty():
+            node = queue_a.get()
+            current = node[1][len(node[1]) - 1]
+            print('node: ', node)
+            print('len node: ', len(node[1]))
+            print('current: ', current)
+            
+            if end in node[1]:
+                print("Path found: " + str(node[1]) + ", Cost = " + str(node[0]))
+                break
+            
+            cost = node[0]
+            for neighbor in graph[current]:
+                temp = node[1][:]
+                temp.append(neighbor)
+                queue_a.put((cost + graph[current][neighbor], temp))
+        
+    def __readGraph(self):
+        graph = {}
+        
+        graph['Arad'] = {}
+        graph['Arad']['Zerind'] = 75
+        graph['Arad']['Timisoara'] = 118
+        graph['Arad']['Sibiu'] = 140
+
+        graph['Zerind'] = {}
+        graph['Zerind']['Oradea'] = 71
+        graph['Zerind']['Arad'] = 75
+
+        graph['Timisoara'] = {}
+        graph['Timisoara']['Lugoj'] = 111
+        graph['Timisoara']['Arad'] = 118
+
+        graph['Sibiu'] = {}
+        graph['Sibiu']['Arad'] = 140
+        graph['Sibiu']['Oradea'] = 151
+        graph['Sibiu']['Fagaras'] = 99
+        graph['Sibiu']['RimnicuVilcea'] = 80
+
+        graph['Oradea'] = {}    
+        graph['Oradea']['Zerind'] = 71
+        graph['Oradea']['Sibiu'] = 151
+
+        graph['Lugoj'] = {}    
+        graph['Lugoj']['Timisoara'] = 111
+        graph['Lugoj']['Mehadia'] = 70
+
+        graph['RimnicuVilcea'] = {}    
+        graph['RimnicuVilcea']['Sibiu'] = 80
+        graph['RimnicuVilcea']['Pitesti'] = 97
+        graph['RimnicuVilcea']['Craiova'] = 146
+
+        graph['Mehadia'] = {} 
+        graph['Mehadia']['Lugoj'] = 70
+        graph['Mehadia']['Dobreta'] = 75
+
+        graph['Craiova'] = {} 
+        graph['Craiova']['Dobreta'] = 120
+        graph['Craiova']['Pitesti'] = 138
+        graph['Craiova']['RimnicuVilcea'] = 146
+
+        graph['Pitesti'] = {} 
+        graph['Pitesti']['Craiova'] = 138
+        graph['Pitesti']['Bucharest'] = 101
+        graph['Pitesti']['RimnicuVilcea'] = 97
+
+        graph['Fagaras'] = {} 
+        graph['Fagaras']['Sibiu'] = 99
+        graph['Fagaras']['Bucharest'] = 211
+
+        graph['Dobreta'] = {} 
+        graph['Dobreta']['Mehadia'] = 75
+        graph['Dobreta']['Craiova'] = 120
+
+        graph['Bucharest'] = {} 
+        graph['Bucharest']['Fagaras'] = 211
+        graph['Bucharest']['Pitesti'] = 101
+        graph['Bucharest']['Giurgiu'] = 90
+
+        graph['Giurgiu'] = {} 
+        graph['Giurgiu']['Bucharest'] = 90
+
+        print("Created graph: ", graph)
+
+        return graph
 
 grafo_jarra = {
 
@@ -98,7 +204,7 @@ grafo_granjero = {
     '(0,0,1,0)': ['(1,1,1,0)', '(1,0,1,1)'],
     '(1,0,1,1)': ['(0,0,0,1)', '(0,0,1,0)', '(0,0,1,1)'],
     '(0,0,1,1)': ['(1,0,1,1)', '(1,1,1,1)'],
-    '(1,1,1,1)': ['(0,0,1,1)'],
+    '(1,1,1,1)': ['(0,0,1,1)']
 }
 
 graph3 = {
@@ -110,10 +216,21 @@ graph3 = {
     "B":[("G", 5), ("S", 5)],
 }
 
-tree1 = tree_searchs("Arbol 1")
 
-print next(tree1.dfs_paths(grafo_jarra, '(0,0)', '(2,0)')) 
-print next(tree1.bfs_paths(grafo_jarra, '(0,0)', '(2,0)'))
+def main():
+
+    tree1 = tree_searchs("Arbol 1")
+
+    print("\n\nRecorrido en profundidad: ")
+    print(next(tree1.dfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)'))) 
+
+    print("\n\nRecorrido en anchura: ")
+    print(next(tree1.bfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)')))
+
+    tree1.implementacion_costo_uniforme('Arad', 'Bucharest')
+
+if __name__ == "__main__":
+    main()
 
 """
 
