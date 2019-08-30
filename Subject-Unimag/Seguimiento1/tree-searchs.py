@@ -46,32 +46,59 @@ class tree_searchs():
     def bfs_paths(self, graph, start, goal):
         queue = [(start, [start])]
         while queue:
-            #print "Cola antes: ", queue, "\n"
+            #print("Cola antes: ", queue, "\n")
             (vertex, path) = queue.pop(0)
-            #print "Cola despues: ", queue, "\n"
+            print("Vertex: ", vertex)
+            #print("Cola despues: ", queue, "\n")
 
-            print(path)
-            
-            l = list(set(graph[vertex]) - set(path))
+            print("Camino: ", path)
+
+            l = list(set(graph[vertex]) - set(path))    #Quedan nodos a los que puedo viajar
+
             for next in sorted(l):
-                print(graph[vertex])
+                print("Camino vertex: ", graph[vertex])
                 if next == goal:
                     yield path + [next]
                 else:
                     queue.append((next, path + [next]))
     
     def dfs_paths(self, graph, start, goal):
+        
         stack = [(start, [start])]
+        
+        nivel = 0
+
         while stack:
             (vertex, path) = stack.pop()
-            print('path: ' , path)
+                
             l = list(set(graph[vertex]) - set(path))
+
+            print(path)
+
             for next in sorted(l, reverse=True):
                             
                 if next == goal:
-                    yield path + [next]
+                    yield (path + [next], True)
                 else:
                     stack.append((next, path + [next]))
+
+    def dfs_paths_limit(self, graph, start, goal, outer_limit):
+
+    	x = 0
+
+    	while(True):
+    		val = next(self.dfs_paths(graph, start, goal, x))
+    		print("\n[+] Cantidad iterada: ", x, "\n")
+    		print("[+] Camino: ", val[0])
+
+    		if(val[1]):
+    			print("[+] Saliendo del limite")
+    			break
+
+    		if(outer_limit > x):
+    			x = x + 1
+    		else:
+    			break
 
     def implementacion_costo_uniforme(self, origen, destino):
         graph = self.__readGraph()
@@ -207,6 +234,19 @@ grafo_granjero = {
     '(1,1,1,1)': ['(0,0,1,1)']
 }
 
+grafo_granjero_c = {
+    '(0,0,0,0)': {'(1,1,0,0)':1},
+    '(1,1,0,0)': {'(0,0,0,0)':1, '(0,1,0,0)':1},
+    '(0,1,0,0)': {'(1,1,0,0)':1, '(1,1,0,1)':1, '(1,1,1,0)':1},
+    '(1,1,0,1)': {'(0,0,0,1)':1, '(0,1,0,0)':1},
+    '(0,0,0,1)': {'(1,1,0,1)':1, '(1,0,1,1)':1},
+    '(1,1,1,0)': {'(0,1,0,0)':1, '(0,0,1,0)':1},
+    '(0,0,1,0)': {'(1,1,1,0)':1, '(1,0,1,1)':1},
+    '(1,0,1,1)': {'(0,0,0,1)':1, '(0,0,1,0)':1, '(0,0,1,1)':1},
+    '(0,0,1,1)': {'(1,0,1,1)':1, '(1,1,1,1)':1},
+    '(1,1,1,1)': {'(0,0,1,1)':1}
+}
+
 graph3 = {
     # Origen : destinos = (destino, peso_arista)
     "S":[("A", 1), ("B", 5), ("C", 15)],
@@ -220,14 +260,15 @@ graph3 = {
 def main():
 
     tree1 = tree_searchs("Arbol 1")
+    print("Grafo granjero modificado: ", grafo_granjero_c)
 
-    print("\n\nRecorrido en profundidad: ")
-    print(next(tree1.dfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)'))) 
+    #print("\n\nRecorrido en profundidad: ")
+    #print(next(tree1.dfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)'))) 
 
-    print("\n\nRecorrido en anchura: ")
-    print(next(tree1.bfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)')))
+    #print("\n\nRecorrido en anchura: ")
+    #print(next(tree1.bfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)')))
 
-    tree1.implementacion_costo_uniforme('Arad', 'Bucharest')
+    #tree1.implementacion_costo_uniforme('Arad', 'Bucharest')
 
 if __name__ == "__main__":
     main()
