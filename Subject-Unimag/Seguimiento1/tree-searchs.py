@@ -22,6 +22,12 @@ except ImportError:
     # Python 3
     import queue
 
+import math
+from clase_matriz import matriz
+
+#matriz1 = matriz(5,5, [ (1,1), (0,0), (3,3), (3,1), (1,4)] )
+#matriz1.mostrar_matriz()
+
 class tree_searchs():
 
     def __init__(self, name):
@@ -148,13 +154,14 @@ class tree_searchs():
         
         queue_a = queue.PriorityQueue()
         queue_a.put((0, [start]))
+        #print("Start: ", start)
         
         while not queue_a.empty():
             node = queue_a.get()
             current = node[1][len(node[1]) - 1]
-            print('node: ', node)
-            print('len node: ', len(node[1]))
-            print('current: ', current)
+            #print('node: ', node)
+            #print('len node: ', len(node[1]))
+            #print('current: ', current)
             
             if end in node[1]:
                 print("Path found: " + str(node[1]) + ", Cost = " + str(node[0]))
@@ -163,10 +170,105 @@ class tree_searchs():
             cost = node[0]
             for neighbor in graph[current]:
                 temp = node[1][:]
+
+                #print("TEMP: ", temp)
+                #print("neig: ", neighbor)
                 temp.append(neighbor)
                 queue_a.put((cost + graph[current][neighbor], temp))
+    
+    def get_heuristic(self, graph, ciudad):
+        return graph[ciudad]
+
+    def get_heuristic_2(self, graph, ciudad_origen, ciudad_destino):
         
-def crear_grafo_rumania():
+        x1 = graph[ciudad_origen]['x']
+        y1 = graph[ciudad_origen]['y']
+
+        x2 = graph[ciudad_destino]['x']
+        y2 = graph[ciudad_destino]['y']
+
+        #print("x1: ", x1, " x2: ", x2, " y1: ", y1, " y2: ", y2)
+
+        return format(math.sqrt((x2-x1)**2 + (y2-y1)**2), '.1f') 
+
+    def A_asterisco(self, graph, graph2, start, end):   #Grafo 1 -> Pesos | Grafo 2 -> Heuristica
+
+        if start not in graph or start not in graph2:
+            raise TypeError(str(start) + ' no fue encontrado en el grafo!')
+            return
+
+        if end not in graph or start not in graph2:
+            raise TypeError(str(end) + ' no fue encontrado en el grafo!')
+            return
+        
+        queue_a = queue.PriorityQueue()
+        
+        queue_a.put([ 0 + self.get_heuristic(graph2, start), [start], 0])    # [peso_acu + self.get_heuristic(ciudad), [lista_visitados], peso_acu]
+        
+        while not queue_a.empty():
+            node = queue_a.get()
+            current = node[1][len(node[1]) - 1]
+            #print('node: ', node)
+            #print('len node: ', len(node[1]))
+            #print('current: ', current)
+            
+            if end in node[1]:
+                print("Path found: " + str(node[1]) + ", Cost = " + str(node[2]))
+                break
+
+            cost = node[2]
+
+            for neighbor in graph[current]:
+                temp = node[1][:]
+
+                if neighbor not in temp:
+                    queue_a.put([ cost + graph[current][neighbor] + self.get_heuristic(graph2, neighbor) , temp + [neighbor], cost + graph[current][neighbor] ])
+
+    def primero_el_mejor(self, graph, graph2, start, end):   #Grafo 1 -> Pesos | Grafo 2 -> Heuristica
+
+        if start not in graph or start not in graph2:
+            raise TypeError(str(start) + ' no fue encontrado en el grafo!')
+            return
+
+        if end not in graph or start not in graph2:
+            raise TypeError(str(end) + ' no fue encontrado en el grafo!')
+            return
+        
+        queue_a = queue.PriorityQueue()
+        
+        #queue_a.put([self.get_heuristic_2(graph2, start, start), [start], 0])
+
+        queue_a.put([self.get_heuristic(graph2, start), [start], 0])    # [peso_acu + self.get_heuristic(ciudad), [lista_visitados], peso_acu]
+        #count = 0
+
+        while not queue_a.empty():
+            node = queue_a.get()
+            current = node[1][len(node[1]) - 1]
+            #print('node: ', node)
+            #print('len node: ', len(node[1]))
+            #print('current: ', current)
+            
+            if end in node[1]:
+                print("Path found: " + str(node[1]) + ", Cost = " + str(node[2]))
+                break
+
+            cost = node[2]
+            #print("Current: ", current, " count: ", count)
+            #count = count + 1
+
+            for neighbor in graph[current]:
+                temp = node[1][:]
+
+                #print("temp ", temp)
+                #print("neighbor: ", neighbor)
+
+                if neighbor not in temp:
+                    #queue_a.put([self.get_heuristic_2(graph2, current, neighbor) , temp + [neighbor], cost + graph[current][neighbor]])
+                    #print("Ingreso a neighbor: ", neighbor, " con heuristica: ", self.get_heuristic_2(graph2, current, neighbor))
+                    
+                    queue_a.put([self.get_heuristic(graph2, neighbor) , temp + [neighbor], cost + graph[current][neighbor]])
+
+def crear_grafo_rumania_g():
     graph = {}
     
     graph['Arad'] = {}
@@ -233,12 +335,34 @@ def crear_grafo_rumania():
 
     #print("Created graph: ", graph)
 
-    return graph
+    graph2 = {
+        'Arad':366,
+        'Bucharest':0,
+        'Craiova':160,
+        'Dobreta':242,
+        'Eforie':161,
+        'Fagaras':178,
+        'Giurgiu':77,
+        'Hirsova':151,
+        'Iasi':226,
+        'Lugoj':244,
+        'Mehadia':141,
+        'Neamt':234,
+        'Oradea':380,
+        'Pitesti':98,
+        'RimnicuVilcea':193,
+        'Sibiu':253,
+        'Timisoara':329,
+        'Urziceni':80,
+        'Vaslui':199,
+        'Zerind':374
+    }
 
-grafo_rumania = crear_grafo_rumania()
+    return graph, graph2
+
+grafo_rumania_pesos, grafo_rumania_heuristica = crear_grafo_rumania_g()
 
 grafo_jarra = {
-
     '(0,0)': {'(4,0)':1, '(0,3)':1},
     '(4,0)': {'(4,3)':1, '(0,0)':1, '(1,3)':1},
     '(4,3)': {'(0,3)':1, '(4,0)':1},
@@ -268,12 +392,77 @@ grafo_granjero = {
     '(1,1,1,1)': {'(0,0,1,1)':1}
 }
 
+grafo_4_reinas = {
+    '(x,y)':{'(0,0)':1, '(1,0)':1, '(2,0)':1, '(3,0)':1},
+    '(0,0)':{'(2,1)':1, '(3,1)':1},
+    '(1,0)':{'(3,1)':1},
+    '(2,0)':{'(0,1)':1},
+    '(3,0)':{'(0,1)':1, '(1,1)':1},
+    '(3,1)':{'(1,2)':1, '(0,2)':1},
+    '(0,1)':{'(3,2)':1, '(2,2)':1},
+    '(0,2)':{'(2,3)':1},
+    '(3,2)':{'(1,3)':1}
+}
+
+grafo_4_reinas_ = {
+    matriz(4,4, []) : { matriz(4,4, [(0,0)]) : 1, matriz(4,4, [(1,0)]) : 1, matriz(4,4, [(2,0)]) : 1, matriz(4,4, [(3,0)]) : 1},
+    matriz(4,4, [(0,0)]) : {matriz(4,4, [(2,1)]) : 1, matriz(4,4, [(3,1)]) : 1},
+    matriz(4,4, [(1,0)]) : {matriz(4,4, [(3,1)]) : 1},
+    matriz(4,4, [(2,0)]) : {matriz(4,4, [(0,1)]) : 1},
+    matriz(4,4, [(3,0)]) : {matriz(4,4, [(0,1)]) : 1, matriz(4,4, [(1,1)]) : 1},
+    matriz(4,4, [(3,1)]) : {matriz(4,4, [(1,2)]) : 1, matriz(4,4, [(0,2)]) : 1},
+    #matriz(4,4, [(0,0)])
+}
+
+grafo_frankfurt_munchen = {
+    'frankfurt':{'mannheim':85, 'wuzburg':217, 'kassel':173},
+    'mannheim':{'frankfurt':85, 'karlsruhe':80},
+    'wuzburg':{'frankfurt':217, 'erfurt':186, 'nurnberg':103},
+    'kassel':{'frankfurt':173, 'munchen':502},
+    'karlsruhe':{'mannheim':80, 'augsburg':250},
+    'nurnberg':{'wuzburg':103, 'stuttgart':183, 'munchen':167},
+    'erfurt':{'wuzburg':186},
+    'stuttgart':{'nurnberg':183},
+    'augsburg':{'karlsruhe':250, 'munchen':84},
+    'munchen':{'augsburg':84, 'nurnberg':167, 'kassel':502}
+}
+
+grafo_sevilla_almeria_pesos = {
+    'Sevilla':{'Cordoba':1, 'Malaga':1, 'Cadiz':1, 'Huelvas':1},
+    'Huelvas':{'Cadiz':1, 'Sevilla':1},
+    'Cadiz':{'Sevilla':1, 'Malaga':1},
+    'Malaga':{'Sevilla':1, 'Cordoba':1, 'Granada':1},
+    'Cordoba':{'Sevilla':1, 'Granada':1, 'Jaen':1},
+    'Jaen':{'Cordoba':1, 'Granada':1, 'Almeria':1},
+    'Granada':{'Malaga':1, 'Cordoba':1, 'Jaen':1, 'Almeria':1},
+    'Almeria':{'Jaen':1, 'Granada':1}
+}
+
+grafo_sevilla_almeria_heuristica = {
+    'Almeria':{'x':409.5, 'y':93},
+    'Granada':{'x': 309, 'y': 127.5},
+    'Malaga':{'x': 232.5, 'y': 75},
+    'Cadiz':{'x': 63, 'y': 57},
+    'Huelvas':{'x': 3, 'y': 139.5},
+    'Sevilla':{'x': 90, 'y': 153},
+    'Cordoba':{'x': 198, 'y': 207},
+    'Jaen':{'x': 295.5, 'y': 192},
+}
+
+#print(grafo_sevilla_almeria_heuristica['Almeria']['x'])
+#print(grafo_sevilla_almeria_heuristica['Almeria']['y'])
+
+
 def main():
 
     tree1 = tree_searchs("Arbol 1")
 
-    #print("\n\nRecorrido en profundidad: ")
-    #print(next(tree1.dfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)'))) 
+    print("\n\nRecorrido en profundidad: ")
+    print(next(tree1.dfs_paths(grafo_4_reinas, 'blanco', '(1,1,1,1)'))) 
+
+
+    #print("\n\nRecorrido en profundidad con limite iterativo: ")
+    #tree1.dfs_paths_limit(grafo_jarra, '(0,0)', '(2,0)', 8)
 
 
     #print("\n\nRecorrido en anchura: ")
@@ -281,12 +470,13 @@ def main():
 
 
     #print("\n\nRecorrido costo uniforme: ")
-    #tree1.costo_uniforme(grafo_rumania, 'Arad', 'Bucharest')
+    #tree1.costo_uniforme(grafo_frankfurt_munchen, 'frankfurt', 'munchen')
 
-    
-    #print("\n\nRecorrido en profundidad con limite iterativo: ")
-    #tree1.dfs_paths_limit(grafo_jarra, '(0,0)', '(2,0)', 5)
-    
+    print("\n\nRecorrido primero el mejor: ")
+    tree1.primero_el_mejor(grafo_rumania_pesos, grafo_rumania_heuristica, 'Arad', 'Bucharest')
+
+    print("\n\nRecorrido A*: ")
+    tree1.A_asterisco(grafo_rumania_pesos, grafo_rumania_heuristica, 'Arad', 'Bucharest')
 
 if __name__ == "__main__":
     main()
@@ -366,23 +556,5 @@ graph_class = {
          'K': [('F', 1), ('G', 1), ('J', 1), ('L', 1)],
          'L': [('H', 1), ('I', 1), ('K', 1)],
          }
-
-grafo_jarra = {
-
-    '(0,0)': [('(4,0)', 1), ('(0,3)', 1)],
-    '(4,0)': [('(4,3)', 1), ('(0,0)', 1), ('(1,3)', 1)],
-    '(4,3)': [('(0,3)', 1), ('(4,0)', 1)],
-    '(0,3)': [('(4,3)', 1), ('(0,0)', 1), ('(3,0)', 1)],
-    '(1,3)': [('(4,3)', 1), ('(0,3)', 1), ('(1,0)', 1), ('(4,0)', 1)],
-    '(1,0)': [('(4,0)', 1), ('(1,3)', 1), ('(0,0)', 1), ('(0,1)', 1)],
-    '(0,1)': [('(4,1)', 1), ('(0,3)', 1), ('(0,0)', 1), ('(1,0)', 1)],
-    '(4,1)': [('(4,3)', 1), ('(0,1)', 1), ('(4,0)', 1), ('(3,3)', 1)],
-    '(3,0)': [('(3,3)', 1), ('(4,0)', 1), ('(0,0)', 1), ('(0,3)', 1)],
-    '(3,3)': [('(4,3)', 1), ('(0,3)', 1), ('(3,0)', 1), ('(4,2)', 1)],
-    '(4,2)': [('(4,3)', 1), ('(0,2)', 1), ('(4,0)', 1), ('(3,3)', 1)],
-    '(0,2)': [('(4,2)', 1), ('(0,3)', 1), ('(0,0)', 1), ('(2,0)', 1)],
-    '(2,0)': [('(2,3)', 1), ('(4,0)', 1), ('(0,0)', 1), ('(0,2)', 1)],
-    '(2,3)': [('(4,3)', 1), ('(0,3)', 1), ('(2,0)', 1), ('(4,1)', 1)],
-}
 
 """
