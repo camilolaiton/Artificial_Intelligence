@@ -18,7 +18,7 @@ function setup() {
 	estadisticas = createP("Estadisticas: ");
 	estadisticas.class("estadisticas");
 
-	target = "Camilo adnres Laiton BonadieQQ@z"; //Objetivo
+	target = "Camilo Andres Laiton Bonadiez"; //Objetivo
 	N = 800; //Poblacion maxima
 	rangoMutacion = 0.01; //Porcentaje de mutacion
 
@@ -48,9 +48,10 @@ function mostrarInfo(){
 
 	mejorFrase.html("Mejor frase:<br>" + respuesta);
 
-	var textoEstadisticas = "Total generaciones: " + poblacion.generaciones + "<br>";
-	textoEstadisticas += "Total poblacion: " + N + "<br>";
-	textoEstadisticas += "Porcentaje de mutacion: " + rangoMutacion;
+	var textoEstadisticas = "<strong> Total generaciones: </strong>" + poblacion.generaciones + "<br>";
+	textoEstadisticas += "<strong> Total poblacion: </strong>" + N + "<br>";
+	textoEstadisticas += "<strong> Porcentaje de mutacion: </strong>" + rangoMutacion + "<br>";
+	textoEstadisticas += "<strong> Objetivo: </strong>"+ poblacion.target;
 
 	estadisticas.html(textoEstadisticas);
 	frases.html("Todas las frases:<br>" + poblacion.todasLasFrases());		
