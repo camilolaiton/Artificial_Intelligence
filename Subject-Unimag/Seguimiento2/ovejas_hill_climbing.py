@@ -78,7 +78,19 @@ class hill_climbing():
         self.__num_pasos = 0
 
     def logica(self):
-        pass
+        
+        # Estado actual en la variable self.__estado_actual 
+        
+        while True:
+            
+            estados_objetivo = self.__funcion_transicion()
+            estados_objetivo = eliminar_peores(estados_objetivo, self.__estado_actual)
+            
+            if estados_objetivo:
+                self.__estado_actual = self.escoger_mejor(estados_objetivo)
+            else:
+                break
+        
 
     def mostrar_info(self):
         print("Numero de repeticiones:", self.__num_reinicios)
@@ -87,9 +99,33 @@ class hill_climbing():
 
     def funcion_transicion(self):
         pass
+    
+    def eliminar_peores(self, estados_objetivo, actual):
+        
+        for i in estados_objetivo:
+            
+            if (estados_objetivo.valor < actual.valor):
+                estados_objetivo.remove(i)
+    
+    def escoger_mejor(self, estados_objetivo):
+        
+        mejor = oveja(0, 0, 0)
+        
+        for i in estados_objetivo:
+            
+            if(mejor.valor < i.valor):
+                mejor = i
+                
+        return mejor
 
-    def funcion_evaluacion(self):
-        pass
+    def funcion_evaluacion(self, estado_objetivo):
+        
+        suma_valor = 0
+        
+        for i in estado_objetivo:
+            suma_valor += i.valor
+            
+        return suma_valor
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -102,3 +138,6 @@ if __name__ == "__main__":
     camion1 = camion(20)
     camion1.equipaje = [oveja(1, 10, 100), oveja(2, 10, 80)]
     print(camion1.mostrar_equipaje())
+    
+    hill1 = hill_climbing(1, camion1.equipaje, True)
+    
