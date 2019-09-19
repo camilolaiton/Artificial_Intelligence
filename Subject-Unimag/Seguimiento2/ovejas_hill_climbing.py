@@ -134,10 +134,18 @@ if __name__ == "__main__":
     ap.add_argument("-v", "--verbosity", default=False, help="Mostrar mas información", type=bool)
 
     args = vars(ap.parse_args())
-
+    
+    ovejas_disponibles = {
+        1 : oveja(1, 10, 100),
+        2 : oveja(2, 8, 95),
+        3 : oveja(3, 9, 80),
+        4 : oveja(4, 10, 80),
+        5 : oveja(5, 9, 70),
+        6 : oveja(6, 8, 90),
+    }
+    
     camion1 = camion(20)
-    camion1.equipaje = [oveja(1, 10, 100), oveja(2, 10, 80)]
-    print(camion1.mostrar_equipaje())
+    camion1.equipaje = [ovejas_disponibles[6], ovejas_disponibles[2]]
     
     hill1 = hill_climbing(1, camion1.equipaje, True)
     
