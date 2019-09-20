@@ -66,7 +66,9 @@ class hill_climbing():
         self.__verbosity = verbosity    #Boolean para mostrar info
         self.__num_pasos = 0    #Para saber pasos que demoro
         self.__capacidad = capacidad
+        self.__inicial = estado_actual
         self.__actual = estado_actual
+        self.__soluciones = []
 
     def __calcular_peso(self, ovejas):
 
@@ -93,6 +95,23 @@ class hill_climbing():
             return valor
         
         return 0
+
+    def implementacion(self):
+
+        self.__soluciones = []
+
+        for reinicio in range(0, self.__num_reinicios):
+            print("Reinicio: ", reinicio)
+            self.logica()
+            self.__soluciones.append(self.__actual)
+            self.__actual = self.__inicial
+
+        print("\nSoluciones encontradas: ")
+        print(mostrar_equipaje_interno(self.__soluciones))
+
+        print("\n\nEscogemos la mejor: ")
+        self.__actual = self.escoger_mejor(self.__soluciones)
+        mostrar_equipaje(self.__actual)
 
     def logica(self):
         
@@ -123,7 +142,7 @@ class hill_climbing():
                 print("*************************")
                 print("*************************")
                 break
-        
+
     def mostrar_info(self, solucion):
         print("\nINFORMACION:")
         print("Numero de reinicios:", self.__num_reinicios)
@@ -215,11 +234,11 @@ class hill_climbing():
 
     def escoger_mejor(self, estados_objetivo):
         
-        mejor = []
-        valor_actual = self.__calcular_valor(self.__actual)
+        mejor = self.__actual
 
         for estado_objetivo in estados_objetivo:    #Recorremos la lista de estados objetivo
-
+            
+            valor_actual = self.__calcular_valor(mejor)
             valor_objetivo = self.__calcular_valor(estado_objetivo)  #Calculamos el valor de un estado
 
             if(valor_objetivo > valor_actual):    #Si el valor objetivo es mayor, cambiamos la configuracion
@@ -230,7 +249,7 @@ class hill_climbing():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
 
-    ap.add_argument("-n", "--numruns", default=1, help="Cantidad de reinicios del algoritmo", type=int)
+    ap.add_argument("-n", "--runs", default=1, help="Cantidad de reinicios del algoritmo", type=int)
     ap.add_argument("-v", "--verb", default=0, help="Mostrar mas información", type=int)
 
     args = vars(ap.parse_args())
@@ -244,5 +263,5 @@ if __name__ == "__main__":
         oveja(5, 8, 90),
     ]
 
-    hill1 = hill_climbing(args["numruns"], [ovejas_disponibles[5], ovejas_disponibles[4] ], 20, args["verb"])
-    hill1.logica()
+    hill1 = hill_climbing(args["runs"], [ovejas_disponibles[5], ovejas_disponibles[4] ], 20, args["verb"])
+    hill1.implementacion()
