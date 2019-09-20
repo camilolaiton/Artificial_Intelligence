@@ -1,5 +1,15 @@
 #!/usr/bin/python
 
+"""
+    Made by:
+        - Camilo Laiton
+        University of Magdalena, Colombia
+        2019-2
+        Artificial Intelligence
+        Topic: Local searchs
+        GitHub: https://github.com/kmilo9713/
+"""
+
 import argparse, random
 
 class oveja:
