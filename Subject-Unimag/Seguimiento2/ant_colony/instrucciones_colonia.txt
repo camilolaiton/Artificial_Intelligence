@@ -1,0 +1,21 @@
+* Algoritmo de colonia de hormigas:
+
+	-Camilo Laiton
+
+* Variables que se pueden dar por linea de comando (Todos los parametros tienen valores por defecto):
+
+--doc archivo_ovejas.txt -> Se le pasa la dirección donde se encuentra el archivo con la información de las ovejas, si no existe se genera el mismo con 10 000 ovejas predeterminadas.
+
+--verb 1 -> Puede tomar valores de 1 ó 0 para mostrar cambios en el algoritmo
+
+--peso -> Peso máximo para las ovejas
+
+--alpha -> Parametro establecido para el procedimiento
+
+--beta -> Parametro establecido para el procedimiento
+
+--dFero -> Delta de feromona (evaporacion)
+
+* Ejemplo para ejecutar el programa con documento "ovejas.txt" y peso maximo de 50:
+
+	python3 ovejas_colonia_hormigas.py --doc ovejas.txt --peso 50
