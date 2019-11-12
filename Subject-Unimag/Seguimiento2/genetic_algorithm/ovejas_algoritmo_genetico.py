@@ -269,7 +269,7 @@ if __name__ == "__main__":
     tiempo_total = time() - tiempo_inicio
 
     print("Tiempo de ejecución: ", tiempo_total)
-    #genetico.mostrar_estadisticas()
+    genetico.mostrar_estadisticas()
 
     """
     ovejas_disponibles_2 = [
