@@ -18,7 +18,7 @@ Here are some programs made with p5.js related to artificial intelligence. Some 
 ## [SteeringBehavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
   This algorithm is based in behaviors. Seek.
 
-## [Subject-Unimag](https://github.com/kmilo9713/Web-IA/tree/master/Subject-Unimag/Seguimiento1)
+## [Subject-Unimag](https://github.com/kmilo9713/Web-IA/tree/master/Subject-Unimag)
   This folder contains different algorithms based in the subject Artificial Intelligence given by the Universidad del Magdalena,
   this folder is not related with the university, it just me trying to help people.
 
