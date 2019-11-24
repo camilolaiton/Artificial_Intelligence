@@ -6,7 +6,7 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 
 
 ## Contents
-1. [MazeGenerator](#1. Maze Generator)
+1. [MazeGenerator](#MazeGenerator)
 2. [GeneticAlgorithm](#GeneticAlgorithm)
 3. [Steering Behavior](#SteeringBehavior)
 4. [Search algorithms](#Search-Algorithms)
@@ -15,22 +15,22 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 7. [Ending](#End)
 8. [Author](#Authors)
 
-## [1. Maze Generator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
+## [MazeGenerator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
   This algorithm makes a new maze each time it runs. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
 
   [![Maze](https://i.ibb.co/9cfJkBQ/maze.jpg "Maze")](http://i.ibb.co/9cfJkBQ/maze.jpg "Maze")
   
-## [2. Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
+## [GeneticAlgorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
   This algorithm tries to get a string by evolving an initial population. I'\ll upload more examples about this topic overtime.
   
   [![Genetic](https://i.ibb.co/KwyHdTg/gn.jpg "Genetic")](https://i.ibb.co/KwyHdTg/gn.jpg "Genetic")
   
-## [3. Steering Behavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
+## [SteeringBehavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
   This algorithm is based in behaviors. **Seek**.
   
   [![SteeringBehavior](https://i.ibb.co/0XsWwgf/st.jpg "SteeringBehavior")](https://i.ibb.co/0XsWwgf/st.jpg "SteeringBehavior")
 
-## [4. Search Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
+## [Search-Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
   This folder contains some search algorithms like..
   
   | **Algorithms** :computer: |
@@ -41,7 +41,7 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 | :three: **[A\* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** |
 | :four: **[Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)** |
 
-## [5. Bio-inspired Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms)
+## [Bio-inspired-Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms)
 This folder contains bio-inspired algorithms like...
 
   | **Algorithms** :computer: |
@@ -51,7 +51,7 @@ This folder contains bio-inspired algorithms like...
 | :two: **[Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
 | :three: **[Ant Colony](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/ant_colony)** |
 
-## [6. MultiLayer Perceptron Classifier](https://github.com/kmilo9713/Web-IA/tree/master/MLP-Classifier)
+## [MLP-Classifier](https://github.com/kmilo9713/Web-IA/tree/master/MLP-Classifier)
   This project builds a multilayer perceptron trained with the dataset **[Website Phishing Data Set](https://archive.ics.uci.edu/ml/datasets/Website+Phishing)** taken from [**UCI Machine Learning Repository**](https://archive.ics.uci.edu/ml/index.php).
   
   [![Website Pishing Data](https://www.oreilly.com/library/view/mastering-machine-learning/9781788997409/assets/e3eb79d8-3bdd-4dd5-ac6f-dfc29d8411ef.png "Website Pishing Data")](http://www.oreilly.com/library/view/mastering-machine-learning/9781788997409/assets/e3eb79d8-3bdd-4dd5-ac6f-dfc29d8411ef.png "Website Pishing Data")
