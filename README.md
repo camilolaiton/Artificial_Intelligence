@@ -60,9 +60,16 @@ This folder contains bio-inspired algorithms like...
 
 ## Authors
 - **Camilo Laiton** [[kmilo9713]](https://github.com/kmilo9713)
-  If you want to communicate with me then go to my **Github profile** and there is my **Instagram's profile**. You can send me a 
-  message.
-  Spoken Languages: **English** :us:, **French** :fr: and **Spanish** :es:.
+
+------------
+If you want to communicate with me then go to my **Github Account** and there is my **Instagram's profile**. You can send me a message.
+
+**Spoken Languages** :blush:
+1. **Spanish** :es:
+2. **English** :us:
+3. **French** :fr:
+
+------------
 
 ## Note
 > If you want to help with some exercises or if I have any mistake or you want to improve an algorithm, please contact me!
