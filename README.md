@@ -23,12 +23,12 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 ## [2. Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
   This algorithm tries to get a string by evolving an initial population. I'\ll upload more examples about this topic overtime.
   
-  [![Genetic](https://i.ibb.co/82g8Lz1/genetic.png "Genetic")](http://i.ibb.co/82g8Lz1/genetic.png "Genetic")
+  [![Genetic](https://i.ibb.co/KwyHdTg/gn.jpg "Genetic")](https://i.ibb.co/KwyHdTg/gn.jpg "Genetic")
   
 ## [3. Steering Behavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
   This algorithm is based in behaviors. **Seek**.
   
-  [![SteeringBehavior](https://i.ibb.co/smpv4zP/Steering.png "SteeringBehavior")](http://i.ibb.co/smpv4zP/Steering.png "SteeringBehavior")
+  [![SteeringBehavior](https://i.ibb.co/0XsWwgf/st.jpg "SteeringBehavior")](https://i.ibb.co/0XsWwgf/st.jpg "SteeringBehavior")
 
 ## [4. Search Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
   This folder contains some search algorithms like..
