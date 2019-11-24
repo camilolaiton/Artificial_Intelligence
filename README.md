@@ -6,7 +6,7 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 
 
 ## Contents
-1. [MazeGenerator](#MazeGenerator)
+1. [MazeGenerator](#1. Maze Generator)
 2. [GeneticAlgorithm](#GeneticAlgorithm)
 3. [Steering Behavior](#SteeringBehavior)
 4. [Search algorithms](#Search-Algorithms)
