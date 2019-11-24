@@ -1,3 +1,5 @@
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
 # Artificial Intelligence [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 Here are some projects made with **Python** and **JavaScript (p5.js)** related to **artificial intelligence**. Some of these projects are based in The Coding Train.
