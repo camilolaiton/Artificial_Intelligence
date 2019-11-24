@@ -60,7 +60,7 @@ This folder contains bio-inspired algorithms like...
   If you want to improve this repository, please send a pull request and I will read your code. If I consider it helps then I will accept.
   **Thanks for reading**
 
-## Authors
+## Author
 - **Camilo Laiton** [[kmilo9713]](https://github.com/kmilo9713)
 
 ------------
@@ -77,4 +77,4 @@ If you want to communicate with me then go to my **Github Account** and there is
 > If you want to help with some exercises or if I have any mistake or you want to improve an algorithm, please contact me!
 > I will be uptading this repository with new exercises and comments in the code.
 
-See also the list of [contributors](https://github.com/kmilo9713/Web-IA/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/kmilo9713/Artificial_Intelligence/graphs/contributors) who participated in this project.
