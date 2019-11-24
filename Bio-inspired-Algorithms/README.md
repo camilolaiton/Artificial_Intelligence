@@ -1,7 +1,7 @@
 # Bio-inspired Algorithms
   
   ## Made with Python
-  [![Python](https://mk0learntocodew6bl5f.kinstacdn.com/wp-content/uploads/2014/05/learning-python-the-hard-way.png "Python")](http://mk0learntocodew6bl5f.kinstacdn.com/wp-content/uploads/2014/05/learning-python-the-hard-way.png "Python")
+  [![Python](https://s3-us-west-2.amazonaws.com/devcodepro/media/blog/por-que-aprender-python.png "Python")](http://https://s3-us-west-2.amazonaws.com/devcodepro/media/blog/por-que-aprender-python.png "Python")
   
 
 ------------
