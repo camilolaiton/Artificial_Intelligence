@@ -9,9 +9,9 @@
   
   [![Website Pishing Data](https://computervisiononline.com/sites/default/files/uci-machinelearningrepo.png "Website Pishing Data")](https://computervisiononline.com/sites/default/files/uci-machinelearningrepo.png "Website Pishing Data")
   
-  ##Data Description
+  ## Data Description
   
-  ###Attributes
+  ### Attributes
   
  The attribute information holds three categorical values, **Legitimate (1), Suspicious (0)** and **Phishing (-1)**.
   
@@ -20,7 +20,7 @@
 | :zero: **URL Anchor**  |
 | :one: **Request URL**  |
 | :two: **SFH**  |
-| :three: **URL Length **  |
+| :three: **URL Length**  |
 | :four: **Having_ip_address**  |
 | :five: **Prefix/Suffix**  |
 | :six: **Sub Domain**  |
@@ -28,7 +28,7 @@
 | :eight: **Domain Age**  |
 | :nine: **Class**  |
 
-###Histogram
+### Histogram
 The following histogram shows the number of examples availables in the dataset.
 
 [![Histogram](https://i.ibb.co/SV8L5S2/Resultados.png "Histogram")](http://i.ibb.co/SV8L5S2/Resultados.png "Histogram")

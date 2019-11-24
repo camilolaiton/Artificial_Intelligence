@@ -8,12 +8,12 @@
 
 This folder contains bio-inspired algorithms like...
 
-| **Algorithms** :tw-1f60e: |
+| **Algorithms** :computer: |
 | ------------ |
-| :tw-30-20e3: **[Hill Climbing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/hill_climbing)**  |
-| :tw-31-20e3: **[Simulated Annealing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/simulated_annealing)**  |
-| :tw-32-20e3: **[Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
-| :tw-33-20e3: **[Ant Colony](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/ant_colony)** |
+| :zero: **[Hill Climbing](https://github.com/kmilo9713/Artificial_Intelligence/tree/master/Bio-inspired-Algorithms/hill_climbing)**  |
+| :one: **[Simulated Annealing](https://github.com/kmilo9713/Artificial_Intelligence/tree/master/Bio-inspired-Algorithms/simulated_annealing)**  |
+| :two: **[Genetic Algorithm](https://github.com/kmilo9713/Artificial_Intelligence/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
+| :three: **[Ant Colony](https://github.com/kmilo9713/Artificial_Intelligence/tree/master/Bio-inspired-Algorithms/ant_colony)** |
 
 These algorithms solve **The Knapsack Problem** but the objects are **sheeps** and they are organized in two archives .txt:
 - sheep_list_range2_500_arc5b.txt (**500 sheeps**)
