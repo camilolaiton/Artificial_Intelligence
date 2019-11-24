@@ -404,6 +404,17 @@ grafo_4_reinas = {
     '(3,2)':{'(1,3)':1}
 }
 
+grafo_madrid_barcelona_pesos = {
+    'Madrid':{'Zaragoza':1, 'Valencia1':1},
+    'Valencia1':{'Madrid':1, 'Valencia2':1},
+    'Valencia2':{'Valencia1':1, 'Valencia3':1},
+    'Valencia3':{'Valencia2':1, 'Lerida':1, 'Barcelona':1},
+    'Lerida':{'Valencia3':1, 'Barcelona':1, 'Zaragoza':1},
+    'Zaragoza':{'Madrid':1, 'Andorra':1, 'Lerida':1},
+    'Andorra':{'Zaragoza':1, 'Barcelona':1},
+    'Barcelona':{'Valencia3':1, 'Lerida':1, 'Andorra':1}
+}
+
 grafo_4_reinas_ = {
     matriz(4,4, []) : { matriz(4,4, [(0,0)]) : 1, matriz(4,4, [(1,0)]) : 1, matriz(4,4, [(2,0)]) : 1, matriz(4,4, [(3,0)]) : 1},
     matriz(4,4, [(0,0)]) : {matriz(4,4, [(2,1)]) : 1, matriz(4,4, [(3,1)]) : 1},
@@ -449,6 +460,28 @@ grafo_sevilla_almeria_heuristica = {
     'Jaen':{'x': 295.5, 'y': 192},
 }
 
+grafo_clase_pesos = {
+    'S' : {'A':2, 'B':3},
+    'A' : {'C':3},
+    'B' : {'C':1, 'D':3},
+    'C' : {'D':3.5, 'E':3},
+    'E' : {'G':2},
+    'D' : {'F':1},
+    'F' : {'G':1},
+    'G' : {}
+}
+
+grafo_clase_heuristica = {
+    'S':6,
+    'A':4,
+    'B':4,
+    'C':4,
+    'D':3.5,
+    'E':1,
+    'F':1,
+    'G':0,
+}
+
 #print(grafo_sevilla_almeria_heuristica['Almeria']['x'])
 #print(grafo_sevilla_almeria_heuristica['Almeria']['y'])
 
@@ -458,25 +491,22 @@ def main():
     tree1 = tree_searchs("Arbol 1")
 
     print("\n\nRecorrido en profundidad: ")
-    print(next(tree1.dfs_paths(grafo_4_reinas, 'blanco', '(1,1,1,1)'))) 
-
-
-    #print("\n\nRecorrido en profundidad con limite iterativo: ")
-    #tree1.dfs_paths_limit(grafo_jarra, '(0,0)', '(2,0)', 8)
-
+    print(next(tree1.dfs_paths(grafo_madrid_barcelona_pesos, 'Madrid', 'Barcelona'))) 
 
     #print("\n\nRecorrido en anchura: ")
-    #print(next(tree1.bfs_paths(grafo_granjero, '(0,0,0,0)', '(1,1,1,1)')))
+    #print(next(tree1.bfs_paths(grafo_jarra, '(0,0)', '(2,3)')))
 
+    #print("\n\nRecorrido en profundidad con limite iterativo: ")
+    #tree1.dfs_paths_limit(grafo_madrid_barcelona_pesos, 'Madrid', 'Barcelona', 8)
 
     #print("\n\nRecorrido costo uniforme: ")
-    #tree1.costo_uniforme(grafo_frankfurt_munchen, 'frankfurt', 'munchen')
+    #tree1.costo_uniforme(grafo_rumania_pesos, 'Arad', 'Bucharest')
 
-    print("\n\nRecorrido primero el mejor: ")
-    tree1.primero_el_mejor(grafo_rumania_pesos, grafo_rumania_heuristica, 'Arad', 'Bucharest')
+    #print("\n\nRecorrido primero el mejor: ")
+    #tree1.primero_el_mejor(grafo_clase_pesos, grafo_clase_heuristica, 'S', 'G')
 
-    print("\n\nRecorrido A*: ")
-    tree1.A_asterisco(grafo_rumania_pesos, grafo_rumania_heuristica, 'Arad', 'Bucharest')
+    #print("\n\nRecorrido A*: ")
+    #tree1.A_asterisco(grafo_clase_pesos, grafo_clase_heuristica, 'S', 'G')
 
 if __name__ == "__main__":
     main()

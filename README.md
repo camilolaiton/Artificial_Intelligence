@@ -1,6 +1,6 @@
-# Web-IA [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Artificial Intelligence [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-Here are some programs made with p5.js related to artificial intelligence. Some of them are not finished yet. Some of these programs are based on The Coding Train.
+Here are some projects made with python and p5.js related to artificial intelligence. Some of them are not finished yet. Some of these programs are based on The Coding Train.
 
 ## Contents
 1. [MazeGenerator](#MazeGenerator)
