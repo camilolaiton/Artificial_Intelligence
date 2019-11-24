@@ -13,6 +13,7 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 5. [Bio-inspired Algorithms](#Bio-inspired-Algorithms)
 6. [MLP Classifier](#MLP-Classifier)
 7. [Ending](#End)
+8. [Author](#Authors)
 
 ## [1. Maze Generator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
   This algorithm makes a new maze each time it runs. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
@@ -30,23 +31,23 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 ## [4. Search Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
   This folder contains some search algorithms like..
   
-  | **Algorithms** :tw-1f60e: |
+  | **Algorithms** :computer: |
 | ------------ |
-| :tw-30-20e3: **[Breadth First Search (BFS)](https://en.wikipedia.org/wiki/Breadth-first_search)**  |
-| :tw-31-20e3: **[Depth First Search (DFS)](https://en.wikipedia.org/wiki/Depth-first_search)**  |
-| :tw-32-20e3: **[Depth First Search Iterative (DFS-I)]()** |
-| :tw-33-20e3: **[A\* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** |
-| :tw-34-20e3: **[Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)** |
+| :zero: **[Breadth First Search (BFS)](https://en.wikipedia.org/wiki/Breadth-first_search)**  |
+| :one: **[Depth First Search (DFS)](https://en.wikipedia.org/wiki/Depth-first_search)**  |
+| :two: **[Depth First Search Iterative (DFS-I)]()** |
+| :three: **[A\* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** |
+| :four: **[Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)** |
 
 ## [5. Bio-inspired Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms)
 This folder contains bio-inspired algorithms like...
 
-  | **Algorithms** :tw-1f60e: |
+  | **Algorithms** :computer: |
 | ------------ |
-| :tw-30-20e3: **[Hill Climbing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/hill_climbing)**  |
-| :tw-31-20e3: **[Simulated Annealing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/simulated_annealing)**  |
-| :tw-32-20e3: **[Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
-| :tw-33-20e3: **[Ant Colony](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/ant_colony)** |
+| :zero: **[Hill Climbing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/hill_climbing)**  |
+| :one: **[Simulated Annealing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/simulated_annealing)**  |
+| :two: **[Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
+| :three: **[Ant Colony](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/ant_colony)** |
 
 ## [6. MultiLayer Perceptron Classifier](https://github.com/kmilo9713/Web-IA/tree/master/MLP-Classifier)
   This project builds a multilayer perceptron trained with the dataset **[Website Phishing Data Set](https://archive.ics.uci.edu/ml/datasets/Website+Phishing)** taken from [**UCI Machine Learning Repository**](https://archive.ics.uci.edu/ml/index.php).
@@ -59,6 +60,9 @@ This folder contains bio-inspired algorithms like...
 
 ## Authors
 - **Camilo Laiton** [[kmilo9713]](https://github.com/kmilo9713)
+  If you want to communicate with me then go to my **Github profile** and there is my **Instagram's profile**. You can send me a 
+  message.
+  Spoken Languages: **English** :us:, **French** :fr: and **Spanish** :es:.
 
 ## Note
 > If you want to help with some exercises or if I have any mistake or you want to improve an algorithm, please contact me!
