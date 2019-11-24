@@ -1,29 +1,61 @@
 # Artificial Intelligence [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-Here are some projects made with python and p5.js related to artificial intelligence. Some of them are not finished yet. Some of these programs are based on The Coding Train.
+Here are some projects made with **Python** and **JavaScript (p5.js)** related to **artificial intelligence**. Some of these projects are based in The Coding Train.
+
+>Note: I have not finished one folder called Perceptron, I was coding it in JavaScript.
+
 
 ## Contents
 1. [MazeGenerator](#MazeGenerator)
 2. [GeneticAlgorithm](#GeneticAlgorithm)
 3. [Steering Behavior](#SteeringBehavior)
-4. [Subject-Unimag](#Subject-Unimag)
-4. [Ending](#ImportantStuff)
+4. [Search algorithms](#Search-Algorithms)
+5. [Bio-inspired Algorithms](#Bio-inspired-Algorithms)
+6. [MLP Classifier](#MLP-Classifier)
+7. [Ending](#End)
 
-## [MazeGenerator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
+## [1. Maze Generator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
   This algorithm makes a new maze each time it runs. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
   
-## [GeneticAlgorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
-  This algorithm tries to get a string by evolving an initial population. I'll upload more examples about this topic overtime.
+## [2. Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
+  This algorithm tries to get a string by evolving an initial population. I'\ll upload more examples about this topic overtime.
   
-## [SteeringBehavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
-  This algorithm is based in behaviors. Seek.
+  [![Genetic](https://images.pexels.com/photos/753271/pexels-photo-753271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 "Genetic")](http://images.pexels.com/photos/753271/pexels-photo-753271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 "Genetic")
+  
+## [3. Steering Behavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
+  This algorithm is based in behaviors. **Seek**.
+  
+  [![Steering Behavior](https://www.red3d.com/cwr/steer/gdc99/figure3.gif "Steering Behavior")](http://www.red3d.com/cwr/steer/gdc99/figure3.gif "Steering Behavior")
 
-## [Subject-Unimag](https://github.com/kmilo9713/Web-IA/tree/master/Subject-Unimag)
-  This folder contains different algorithms based in the subject Artificial Intelligence given by the Universidad del Magdalena,
-  this folder is not related with the university, it just me trying to help people.
+## [4. Search Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
+  This folder contains some search algorithms like..
+  
+  | **Algorithms** :tw-1f60e: |
+| ------------ |
+| :tw-30-20e3: **[Breadth First Search (BFS)](https://en.wikipedia.org/wiki/Breadth-first_search)**  |
+| :tw-31-20e3: **[Depth First Search (DFS)](https://en.wikipedia.org/wiki/Depth-first_search)**  |
+| :tw-32-20e3: **[Depth First Search Iterative (DFS-I)]()** |
+| :tw-33-20e3: **[A\* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** |
+| :tw-34-20e3: **[Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)** |
 
-## ImportantStuff
-  There are some examples that are not finished yet. If you want to clone one of my projects you can, but just let me know in a message what you made with it, I also want to learn more! =D
+## [5. Bio-inspired Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms)
+This folder contains bio-inspired algorithms like...
+
+  | **Algorithms** :tw-1f60e: |
+| ------------ |
+| :tw-30-20e3: **[Hill Climbing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/hill_climbing)**  |
+| :tw-31-20e3: **[Simulated Annealing](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/simulated_annealing)**  |
+| :tw-32-20e3: **[Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
+| :tw-33-20e3: **[Ant Colony](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/ant_colony)** |
+
+## [6. MultiLayer Perceptron Classifier](https://github.com/kmilo9713/Web-IA/tree/master/MLP-Classifier)
+  This project builds a multilayer perceptron trained with the dataset **[Website Phishing Data Set](https://archive.ics.uci.edu/ml/datasets/Website+Phishing)** taken from [**UCI Machine Learning Repository**](https://archive.ics.uci.edu/ml/index.php).
+  
+  [![Website Pishing Data](https://www.oreilly.com/library/view/mastering-machine-learning/9781788997409/assets/e3eb79d8-3bdd-4dd5-ac6f-dfc29d8411ef.png "Website Pishing Data")](http://www.oreilly.com/library/view/mastering-machine-learning/9781788997409/assets/e3eb79d8-3bdd-4dd5-ac6f-dfc29d8411ef.png "Website Pishing Data")
+  
+## End
+  If you want to improve this repository, please send a pull request and I will read your code. If I consider it helps then I will accept.
+  **Thanks for reading**
 
 ## Authors
 - **Camilo Laiton** [[kmilo9713]](https://github.com/kmilo9713)
