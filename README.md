@@ -17,16 +17,18 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 
 ## [1. Maze Generator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
   This algorithm makes a new maze each time it runs. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
+
+  [![Maze](https://i.ibb.co/9cfJkBQ/maze.jpg "Maze")](http://i.ibb.co/9cfJkBQ/maze.jpg "Maze")
   
 ## [2. Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
   This algorithm tries to get a string by evolving an initial population. I'\ll upload more examples about this topic overtime.
   
-  [![Genetic](https://images.pexels.com/photos/753271/pexels-photo-753271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 "Genetic")](http://images.pexels.com/photos/753271/pexels-photo-753271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 "Genetic")
+  [![Genetic](https://i.ibb.co/82g8Lz1/genetic.png "Genetic")](http://i.ibb.co/82g8Lz1/genetic.png "Genetic")
   
 ## [3. Steering Behavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
   This algorithm is based in behaviors. **Seek**.
   
-  [![Steering Behavior](https://www.red3d.com/cwr/steer/gdc99/figure3.gif "Steering Behavior")](http://www.red3d.com/cwr/steer/gdc99/figure3.gif "Steering Behavior")
+  [![SteeringBehavior](https://i.ibb.co/smpv4zP/Steering.png "SteeringBehavior")](http://i.ibb.co/smpv4zP/Steering.png "SteeringBehavior")
 
 ## [4. Search Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
   This folder contains some search algorithms like..
