@@ -15,22 +15,22 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 7. [Ending](#End)
 8. [Author](#Authors)
 
-## [MazeGenerator](https://github.com/kmilo9713/Web-IA/tree/master/Maze%20Generator)
+## [MazeGenerator](https://github.com/camilolaiton/Artificial_Intelligence/tree/master/Maze%20Generator)
   This algorithm makes a new maze each time it runs. It uses the maze generation algorithm, you can find some information about it [here](https://en.wikipedia.org/wiki/Maze_generation_algorithm).
 
   [![Maze](https://i.ibb.co/9cfJkBQ/maze.jpg "Maze")](http://i.ibb.co/9cfJkBQ/maze.jpg "Maze")
   
-## [GeneticAlgorithm](https://github.com/kmilo9713/Web-IA/tree/master/Genetic%20Algorithm)
+## [GeneticAlgorithm](https://github.com/camilolaiton/Artificial_Intelligence/tree/master/Genetic%20Algorithm)
   This algorithm tries to get a string by evolving an initial population. I'\ll upload more examples about this topic overtime.
   
   [![Genetic](https://i.ibb.co/KwyHdTg/gn.jpg "Genetic")](https://i.ibb.co/KwyHdTg/gn.jpg "Genetic")
   
-## [SteeringBehavior](https://github.com/kmilo9713/Web-IA/tree/master/SteeringBehavior)
+## [SteeringBehavior](https://github.com/camilolaiton/Artificial_Intelligence/tree/master/SteeringBehavior)
   This algorithm is based in behaviors. **Seek**.
   
   [![SteeringBehavior](https://i.ibb.co/0XsWwgf/st.jpg "SteeringBehavior")](https://i.ibb.co/0XsWwgf/st.jpg "SteeringBehavior")
 
-## [Search-Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Search-Algorithms)
+## [Search-Algorithms](https://github.com/camilolaiton/Artificial_Intelligence/tree/master/Search-Algorithms)
   This folder contains some search algorithms like..
   
   | **Algorithms** :computer: |
@@ -41,7 +41,7 @@ Here are some projects made with **Python** and **JavaScript (p5.js)** related t
 | :three: **[A\* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)** |
 | :four: **[Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)** |
 
-## [Bio-inspired-Algorithms](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms)
+## [Bio-inspired-Algorithms](https://github.com/camilolaiton/Artificial_Intelligence/tree/master/Bio-inspired-Algorithms)
 This folder contains bio-inspired algorithms like...
 
   | **Algorithms** :computer: |
@@ -51,7 +51,7 @@ This folder contains bio-inspired algorithms like...
 | :two: **[Genetic Algorithm](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/genetic_algorithm)** |
 | :three: **[Ant Colony](https://github.com/kmilo9713/Web-IA/tree/master/Bio-inspired-Algorithms/ant_colony)** |
 
-## [MLP-Classifier](https://github.com/kmilo9713/Web-IA/tree/master/MLP-Classifier)
+## [MLP-Classifier](https://github.com/camilolaiton/Artificial_Intelligence/tree/master/MLP-Classifier)
   This project builds a multilayer perceptron trained with the dataset **[Website Phishing Data Set](https://archive.ics.uci.edu/ml/datasets/Website+Phishing)** taken from [**UCI Machine Learning Repository**](https://archive.ics.uci.edu/ml/index.php).
   
   [![Website Pishing Data](https://www.oreilly.com/library/view/mastering-machine-learning/9781788997409/assets/e3eb79d8-3bdd-4dd5-ac6f-dfc29d8411ef.png "Website Pishing Data")](http://www.oreilly.com/library/view/mastering-machine-learning/9781788997409/assets/e3eb79d8-3bdd-4dd5-ac6f-dfc29d8411ef.png "Website Pishing Data")
@@ -61,7 +61,7 @@ This folder contains bio-inspired algorithms like...
   **Thanks for reading**
 
 ## Author
-- **Camilo Laiton** [[kmilo9713]](https://github.com/kmilo9713)
+- **Camilo Laiton** [[CamiloLaiton]](https://github.com/camilolaiton)
 
 ------------
 If you want to communicate with me then go to my **Github Account** and there is my **Instagram's profile**. You can send me a message.
@@ -77,4 +77,4 @@ If you want to communicate with me then go to my **Github Account** and there is
 > If you want to help with some exercises or if I have any mistake or you want to improve an algorithm, please contact me!
 > I will be uptading this repository with new exercises and comments in the code.
 
-See also the list of [contributors](https://github.com/kmilo9713/Artificial_Intelligence/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/camilolaiton/Artificial_Intelligence/graphs/contributors) who participated in this project.
